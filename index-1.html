@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="موقع تجريبي عشوائي: فكرة، ألوان، ونرد.">
+  <meta name="theme-color" content="#231942">
+  <link rel="icon" href="data:,">
+  <title>مختبر العشوائية</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <noscript>
+    <p class="hint">هذا الموقع يحتاج تفعيل الجافاسكربت ليعمل.</p>
+  </noscript>
+  <!-- العنوان -->
+  <header class="top">
+    <h1>مختبر العشوائية</h1>
+    <p>ثلاث تجارب صغيرة: فكرة، ألوان، ونرد. اضغط وشوف شنو يطلع.</p>
+  </header>
+
+  <!-- التجارب -->
+  <main class="grid">
+    <!-- بطاقة الفكرة -->
+    <section class="card" aria-labelledby="t-idea">
+      <h2 id="t-idea">فكرة اليوم</h2>
+      <p id="ideaText" class="big" aria-live="polite">...</p>
+      <div class="row">
+        <button id="ideaBtn" class="btn">فكرة جديدة</button>
+        <button id="copyIdea" class="btn ghost">نسخ الفكرة</button>
+      </div>
+    </section>
+
+    <!-- بطاقة الألوان -->
+    <section class="card" aria-labelledby="t-pal">
+      <h2 id="t-pal">لوحة ألوان</h2>
+      <div id="swatches" class="swatches"></div>
+      <p class="hint">اضغط على أي لون لنسخ الكود الخاص به.</p>
+      <div class="row">
+        <button id="palBtn" class="btn">ألوان جديدة</button>
+      </div>
+    </section>
+
+    <section class="card wide" aria-labelledby="t-dice">
+      <h2 id="t-dice">النرد</h2>
+      <div class="dice">
+        <span id="die1" class="die">⚀</span>
+        <span id="die2" class="die">⚁</span>
+      </div>
+      <p class="big">المجموع: <strong id="total">0</strong></p>
+      <p class="hint">آخر الرميات: <span id="history">لا توجد رميات بعد</span></p>
+      <div class="row">
+        <button id="rollBtn" class="btn">ارمِ النرد</button>
+        <button id="clearBtn" class="btn ghost">مسح السجل</button>
+      </div>
+    </section>
+
+    <section class="card wide" aria-labelledby="t-about">
+      <h2 id="t-about">كيف تشتغل التجارب؟</h2>
+      <p class="hint">
+        <strong>الفكرة:</strong> تُختار عشوائياً من قائمة داخل ملف script.js.
+      </p>
+      <p class="hint">
+        <strong>الألوان:</strong> نختار درجة عشوائية ثم نحسب أربعة ألوان قريبة منها.
+      </p>
+      <p class="hint">
+        <strong>النرد:</strong> رقم من 1 إلى 6 لكل حجر، والمجموع يُحفظ في السجل.
+      </p>
+      <p class="hint">
+        <strong>اللون الرئيسي:</strong> يتغير مع كل لوحة جديدة، ويلوّن الخلفية والعنوان.
+      </p>
+    </section>
+
+    <section class="card wide" aria-labelledby="t-files">
+      <h2 id="t-files">ملفات المشروع</h2>
+      <p class="hint">
+        <strong>index.html:</strong> هيكل الصفحة والنصوص.
+      </p>
+      <p class="hint">
+        <strong>style.css:</strong> الألوان والتخطيط والحركة.
+      </p>
+      <p class="hint">
+        <strong>script.js:</strong> منطق العشوائية والأزرار.
+      </p>
+    </section>
+  </main>
+
+  <!-- التذييل -->
+  <footer class="foot">
+    <p>عدد المحاولات في هذه الجلسة: <strong id="count">0</strong></p>
+    <p class="hint">اختصار سريع: اضغط حرف R لرمي النرد.</p>
+  </footer>
+
+  <!-- رسالة النسخ -->
+  <div id="toast" class="toast" role="status"></div>
+
+  <!-- الربط مع ملف الجافاسكربت -->
+  <script src="script.js"></script>
+</body>
+</html>
